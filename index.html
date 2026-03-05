@@ -145,14 +145,12 @@
     .ds-nav::-webkit-scrollbar { display: none; }
     .ds-nav a {
       font-size: var(--fs-caption);
-      font-weight: 600;
       color: var(--color-text-muted);
       text-decoration: none;
       padding: var(--space-md) 0;
       border-bottom: 2px solid transparent;
       white-space: nowrap;
       transition: all 0.2s;
-      letter-spacing: 0.04em;
       text-transform: uppercase;
       display: flex;
       align-items: center;
@@ -201,7 +199,6 @@
       font-size: 0.9375rem;
       font-weight: 700;
       color: var(--color-text-primary);
-      letter-spacing: 0.04em;
       text-transform: uppercase;
     }
     .ds-section__body {
@@ -333,8 +330,8 @@
       font-family: 'Courier New', monospace;
       line-height: 1.9;
     }
-    .type-meta__spec .pc  { color: var(--color-text-secondary); font-weight: 600; }
-    .type-meta__spec .mo  { color: var(--color-brand); font-weight: 600; }
+    .type-meta__spec .pc  { color: var(--color-text-secondary); }
+    .type-meta__spec .mo  { color: var(--color-brand); }
     .type-preview {
       flex: 1;
       display: flex;
@@ -408,8 +405,6 @@
       align-items: center;
       gap: 8px;
       font-family: var(--font-body);
-      font-weight: 600;
-      letter-spacing: 0.04em;
       text-transform: uppercase;
       cursor: pointer;
       border: none;
@@ -452,11 +447,10 @@
       align-items: center;
       gap: 5px;
       font-size: var(--fs-badge);
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
       padding: 4px 10px;
       border-radius: var(--radius-full);
+      background: var(--color-brand-light);
+      color: var(--color-brand);
     }
     .badge--brand { background: var(--color-brand); color: #000; }
     .badge--outline { background: transparent; color: var(--color-brand); border: 1px solid var(--color-brand); }
@@ -854,7 +848,7 @@
               </div>
             </div>
             <div class="type-preview">
-              <div class="type-preview__text" style="font-size:clamp(32px,5vw,60px); font-weight:600; line-height:1.2;">Move Different.<br>Perform Better.</div>
+              <div class="type-preview__text" style="font-size:clamp(32px,5vw,60px); line-height:1.2;">Move Different.<br>Perform Better.</div>
             </div>
           </div>
 
@@ -884,7 +878,7 @@
               </div>
             </div>
             <div class="type-preview">
-              <div class="type-preview__text" style="font-size:clamp(18px,2vw,20px); font-weight:600; line-height:1.5; color:rgba(255,255,255,0.8);">Premium Lubricants Engineered in Korea</div>
+              <div class="type-preview__text" style="font-size:clamp(18px,2vw,20px); line-height:1.5; color:rgba(255,255,255,0.8);">Premium Lubricants Engineered in Korea</div>
             </div>
           </div>
 
@@ -930,9 +924,9 @@
             </div>
             <div class="type-preview">
               <div class="type-preview__text" style="display:flex; gap:8px; flex-wrap:wrap;">
-                <span style="display:inline-block; font-size:12px; font-weight:600; background:#FF5100; color:#000; padding:4px 10px; border-radius:999px; letter-spacing:0.04em; text-transform:uppercase;">K-TECH</span>
-                <span style="display:inline-block; font-size:12px; font-weight:600; background:rgba(255,81,0,0.12); color:#FF5100; padding:4px 10px; border-radius:999px; letter-spacing:0.04em; text-transform:uppercase;">API Certified</span>
-                <span style="display:inline-block; font-size:12px; font-weight:600; background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.6); padding:4px 10px; border-radius:999px; letter-spacing:0.04em; text-transform:uppercase;">Korea</span>
+                <span style="display:inline-block; font-size:12px; background:rgba(255,81,0,0.12); color:#FF5100; padding:4px 10px; border-radius:999px;">K-TECH</span>
+                <span style="display:inline-block; font-size:12px; background:rgba(255,81,0,0.12); color:#FF5100; padding:4px 10px; border-radius:999px;">API Certified</span>
+                <span style="display:inline-block; font-size:12px; background:rgba(255,81,0,0.12); color:#FF5100; padding:4px 10px; border-radius:999px;">Korea</span>
               </div>
             </div>
           </div>
@@ -1128,10 +1122,10 @@
         <div class="ds-subsection">
           <div class="ds-subsection__title">Badge Types</div>
           <div style="display:flex; gap:var(--space-md); flex-wrap:wrap; align-items:center;">
-            <span class="badge badge--brand"><i class="ph ph-star"></i> K-TECH</span>
-            <span class="badge badge--outline">API Certified</span>
-            <span class="badge badge--subtle"><i class="ph ph-check"></i> Premium</span>
-            <span class="badge badge--muted">Korea</span>
+            <span class="badge"><i class="ph ph-star"></i> K-TECH</span>
+            <span class="badge">API Certified</span>
+            <span class="badge"><i class="ph ph-check"></i> Premium</span>
+            <span class="badge">Korea</span>
           </div>
         </div>
 
@@ -1139,38 +1133,14 @@
           <div class="ds-subsection__title">Badge Spec</div>
           <table class="ds-table">
             <thead>
-              <tr><th>Type</th><th>Background</th><th>Text</th><th>Font</th><th>Padding</th><th>Radius</th></tr>
+              <tr><th>스타일</th><th>Background</th><th>Text Color</th><th>Font Size</th><th>Padding</th><th>Radius</th></tr>
             </thead>
             <tbody>
               <tr>
-                <td>Brand</td>
-                <td><code>#FF5100</code></td>
-                <td><code>#000000</code></td>
-                <td>12px / 600</td>
-                <td>4px 10px</td>
-                <td>999px</td>
-              </tr>
-              <tr>
-                <td>Outline</td>
-                <td>transparent</td>
-                <td><code>#FF5100</code></td>
-                <td>12px / 600</td>
-                <td>4px 10px</td>
-                <td>999px</td>
-              </tr>
-              <tr>
-                <td>Subtle</td>
+                <td>기본 (통일 스타일)</td>
                 <td>rgba(255,81,0,0.12)</td>
                 <td><code>#FF5100</code></td>
-                <td>12px / 600</td>
-                <td>4px 10px</td>
-                <td>999px</td>
-              </tr>
-              <tr>
-                <td>Muted</td>
-                <td><code>#1A1A1A</code></td>
-                <td>rgba(255,255,255,0.35)</td>
-                <td>12px / 600</td>
+                <td>12px</td>
                 <td>4px 10px</td>
                 <td>999px</td>
               </tr>
