@@ -1250,7 +1250,7 @@
               </tr>
               <tr>
                 <td>섹션 좌우 여백</td>
-                <td>40px</td>
+                <td>20px</td>
                 <td class="mobile-val"><code>20px</code></td>
               </tr>
               <tr>
@@ -1294,7 +1294,7 @@
               <div class="bp-item__info">
                 <div class="bp-item__name">Tablet</div>
                 <div class="bp-item__range">768px ~ 1023px</div>
-                <div class="bp-item__desc">2컬럼 · 좌우 32px</div>
+                <div class="bp-item__desc">2컬럼 · 좌우 20px</div>
               </div>
             </div>
             <div class="bp-item bp-item--desktop">
@@ -1353,44 +1353,63 @@
         <div class="ds-subsection">
           <div class="ds-subsection__title">Content Area Padding</div>
           <p style="color:var(--color-text-secondary);font-size:var(--fs-body);margin-bottom:var(--space-lg);line-height:1.75;">
-            블록 유형별 좌우 여백 기준입니다. 콘텐츠 영역 최대 너비는 <strong style="color:var(--color-text-primary);">1200px</strong>이며,
-            블록 제작 시 아래 규칙을 기준으로 여백을 설정합니다.
+            블록 제작 시 콘텐츠 영역의 좌우 여백 기준입니다.<br>
+            콘텐츠 영역 최대 너비는 <strong style="color:var(--color-text-primary);">1200px</strong>이며,
+            좌우 여백은 <strong style="color:var(--color-brand);">20px</strong>을 기본값으로 통일합니다.
           </p>
+
+          <!-- 핵심 규칙 박스 -->
+          <div style="background:var(--color-surface-2); border:1px solid var(--color-brand); border-radius:var(--radius-md); padding:var(--space-lg); margin-bottom:var(--space-xl);">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:var(--space-md);">
+              <i class="ph-bold ph-warning-circle" style="color:var(--color-brand); font-size:1.25rem;"></i>
+              <strong style="color:var(--color-text-primary); font-size:var(--fs-caption); text-transform:uppercase;">좌우 여백 핵심 규칙</strong>
+            </div>
+            <div style="font-size:var(--fs-caption); color:var(--color-text-secondary); line-height:1.8;">
+              <p style="margin-bottom:8px;">① 모든 블록의 콘텐츠 좌우 여백 기본값은 <strong style="color:var(--color-brand);">20px</strong> 고정</p>
+              <p style="margin-bottom:8px;">② RANGE로 제공할 경우 → <code>default: 20</code> 으로 설정하고 더 수정하지 않음</p>
+              <p style="margin-bottom:8px;">③ RANGE를 제공하지 않을 경우 → CSS에 <code>padding: 0 20px</code> 하드코딩</p>
+              <p style="margin-bottom:0;">④ 예외: Header 블록만 PC/모바일 별도 값 가능 (PC 20px / 모바일 16px)</p>
+            </div>
+          </div>
+
           <table class="ds-table">
             <thead>
               <tr>
                 <th>블록 유형</th>
                 <th>PC 좌우 여백</th>
-                <th>태블릿 좌우 여백</th>
                 <th class="mobile-col">모바일 좌우 여백</th>
                 <th>Max-width</th>
-                <th>비고</th>
+                <th>여백 제공 방식</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>Header</strong></td>
                 <td>20px <span style="color:var(--color-text-muted);font-size:var(--fs-caption);">(설정 가능)</span></td>
-                <td>—</td>
                 <td class="mobile-val">16px <span style="color:var(--color-text-muted);font-size:var(--fs-caption);">(설정 가능)</span></td>
                 <td>1200px <span style="color:var(--color-text-muted);font-size:var(--fs-caption);">(토글)</span></td>
-                <td style="color:var(--color-text-muted);font-size:var(--fs-caption);">2단계 반응형</td>
+                <td style="color:var(--color-text-muted);font-size:var(--fs-caption);">RANGE (예외)</td>
               </tr>
               <tr>
                 <td><strong>Hero</strong></td>
-                <td>64px <span style="color:var(--color-text-muted);font-size:var(--fs-caption);">(설정 가능으로 변경 예정)</span></td>
-                <td>32px</td>
-                <td class="mobile-val">20px <span style="color:var(--color-text-muted);font-size:var(--fs-caption);">(설정 가능)</span></td>
+                <td><code>20px</code></td>
+                <td class="mobile-val"><code>20px</code></td>
                 <td>1200px <span style="color:var(--color-text-muted);font-size:var(--fs-caption);">(설정 가능)</span></td>
-                <td style="color:var(--color-text-muted);font-size:var(--fs-caption);">3단계 반응형</td>
+                <td style="color:var(--color-text-muted);font-size:var(--fs-caption);">하드코딩 또는 RANGE(default:20)</td>
               </tr>
               <tr>
                 <td><strong>일반 섹션</strong></td>
-                <td>40px</td>
-                <td>—</td>
-                <td class="mobile-val">20px</td>
+                <td><code>20px</code></td>
+                <td class="mobile-val"><code>20px</code></td>
                 <td>1200px</td>
-                <td style="color:var(--color-text-muted);font-size:var(--fs-caption);">기본 레이아웃</td>
+                <td style="color:var(--color-text-muted);font-size:var(--fs-caption);">하드코딩 또는 RANGE(default:20)</td>
+              </tr>
+              <tr>
+                <td><strong>풀스크린 섹션</strong></td>
+                <td><code>20px</code></td>
+                <td class="mobile-val"><code>20px</code></td>
+                <td>1200px</td>
+                <td style="color:var(--color-text-muted);font-size:var(--fs-caption);">하드코딩 또는 RANGE(default:20)</td>
               </tr>
             </tbody>
           </table>
